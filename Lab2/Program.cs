@@ -17,3 +17,10 @@ var os2 = Person.MapUser(n);
 
 
 Console.WriteLine(os2.Name);
+
+var sum = new Sumartor(new[] { 10, 20, 30, 40 });
+
+Console.WriteLine(sum.Count());
+Console.WriteLine(sum.SumDiv3());
+Console.WriteLine(sum.Sum());
+sum.Display(1, 2);
