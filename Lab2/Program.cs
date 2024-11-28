@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Lab2.Models;
 /*
+using Lab2.Models;
+
 Console.WriteLine("Hello, World!");
 
 
@@ -28,7 +29,7 @@ sum.Display(1, 2);
 */
 
 
-
+/*
 Shape rec = new Rectangle();
 var rec2 = new Rectangle();
 
@@ -39,11 +40,24 @@ var shapes = new List<Shape>()
     rec2,
     new Shape()
 };
-/*shapes.Add(rec);
+*//*shapes.Add(rec);
 shapes.Add(rec2);
-shapes.Add(new Shape());*/
+shapes.Add(new Shape());*//*
 
 foreach (var shape in shapes)
 {
     shape.Draw();
 }
+*/
+
+
+using Lab2.Models;
+
+var person = new Person();
+
+person.SetName("name");
+person.SetSurname("name");
+person.SetPesel("02261072763");
+
+Console.WriteLine(person.GetGender());
+Console.WriteLine(person.GetAge());

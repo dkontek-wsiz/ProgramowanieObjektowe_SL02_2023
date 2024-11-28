@@ -2,7 +2,7 @@
 
 namespace Lab2.Models
 {
-    public class Person
+    public class Person2
     {
         private string name;
         private string surname;
@@ -18,11 +18,11 @@ namespace Lab2.Models
             } }
         public string Pesel => pesel;// { get { return pesel; } }
 
-        public Person() {
+        public Person2() {
             name = "Test";
         }
 
-        public Person(string name) { 
+        public Person2(string name) { 
             this.name = name;   
         }
 
@@ -42,14 +42,14 @@ namespace Lab2.Models
         }
 
 
-        public static Person Create()
+        public static Person2 Create()
         {
-            return new Person();
+            return new Person2();
         }
 
-        public static Person MapUser(User n)
+        public static Person2 MapUser(User n)
         {
-            return new Person(n.UserName);
+            return new Person2(n.UserName);
         }
     }
 }
