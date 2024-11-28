@@ -5,7 +5,7 @@
         private int[] numbers = num;
 
         public int Sum() { return numbers.Sum(); }
-         public double SumDiv3() { return Numbers.Where(x => x % 3 == 0).Sum(); }
+         public double SumDiv3() { return numbers.Where(x => x % 3 == 0).Sum(); }
 
         public int Count() { return numbers.Count(); }
         public void Display(int low, int high) { 
