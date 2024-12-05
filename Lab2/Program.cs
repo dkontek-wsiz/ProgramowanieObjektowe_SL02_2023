@@ -50,7 +50,7 @@ foreach (var shape in shapes)
 }
 */
 
-
+/*
 using Lab2.Models;
 
 var person = new Person();
@@ -60,4 +60,38 @@ person.SetSurname("name");
 person.SetPesel("02261072763");
 
 Console.WriteLine(person.GetGender());
-Console.WriteLine(person.GetAge());
+Console.WriteLine(person.GetAge());*/
+
+
+
+using Lab2;
+using Lab2.Lab5;
+using Lab2.Lab6;
+
+//Shape shape = new Shape();
+Shape shape = new Square() {X = 5 };
+
+Console.WriteLine(shape.CalulateArea());
+
+
+IVehicle car = new Car();
+
+try
+{
+
+    car.Start();
+
+    car.Stop();
+}
+catch(NotImplementedException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
+var book = new Book();
+
+Helper.SetCreationUser(book);
