@@ -64,7 +64,7 @@ Console.WriteLine(person.GetAge());*/
 
 
 
-using Lab2;
+/*using Lab2;
 using Lab2.Lab5;
 using Lab2.Lab6;
 
@@ -94,4 +94,14 @@ catch (Exception ex)
 
 var book = new Book();
 
-Helper.SetCreationUser(book);
+Helper.SetCreationUser(book);*/
+
+using Lab2.Interfaces;
+using Lab2.Lab6;
+
+IBookRepository bookRepository = new BookRepository();
+
+foreach(var book in bookRepository.GetAll())
+{
+    Console.WriteLine(book.Title);
+}
