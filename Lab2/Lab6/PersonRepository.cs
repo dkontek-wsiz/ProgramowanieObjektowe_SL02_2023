@@ -2,9 +2,7 @@
 
 namespace Lab2.Lab6
 {
-    public class PersonRepository
-    {
-        public class MockPersonRepository : IPersonRepository
+        public class PersonRepository : IPersonRepository
         {
             private List<Person> data = new List<Person>();
 
@@ -49,6 +47,5 @@ namespace Lab2.Lab6
             {
                 return Get(id).BorrowedBooks;
             }
-        }
     }
 }

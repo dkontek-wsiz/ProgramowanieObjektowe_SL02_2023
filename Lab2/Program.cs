@@ -100,8 +100,49 @@ using Lab2.Interfaces;
 using Lab2.Lab6;
 
 IBookRepository bookRepository = new BookRepository();
+IPersonRepository personRepository = new PersonRepository();
 
-foreach(var book in bookRepository.GetAll())
+foreach(var item in bookRepository.GetAll())
 {
-    Console.WriteLine(book.Title);
+    Console.WriteLine(item.Title);
 }
+
+var book = bookRepository.Get(1);
+
+personRepository.Create(new Person()
+{
+    Id = 1,
+    FirstName = "Test",
+    LastName = "Test",
+});
+
+personRepository.BorrowBook(1, book);
+personRepository.BorrowBook(1, book);
+
+var person = personRepository.Get(1);
+Console.WriteLine($"Książki wypożyczone przez {person.FirstName} {person.LastName}");
+foreach(var item in personRepository.GetBorrowedBook(person.Id))
+{
+    Console.WriteLine(item.Title);
+}
+
+
+List<int> list = new List<int>() { 0, 1, 1 };
+
+
+Console.WriteLine(list.Any(x => x > 0)); // true jesli dowolny element jest wiekszy od 0
+Console.WriteLine(list.All(x => x > 0)); // true jesli wszystkie elementy są wieksze od 0
+
+list.AddRange([10, 11]); // dodanie do listy liczb 10, 11
+
+var listof1 = list.Where(x => x == 1); //Ograniczenie listy tylko do elementów równych 1
+
+Console.WriteLine(list.Count()); // zliczenie elementów
+
+var arr = list.Distinct().ToArray(); // lista bez duplikatów
+
+Console.WriteLine(list.Contains(1)); // true jeśli lista zawiera 1
+Console.WriteLine(list.FirstOrDefault(x => x == 1)); // pierwszy element listy równy 1 lub null
+Console.WriteLine(list.First(x => x == 1)); // pierwszy element listy równy 1 lub błąd
+Console.WriteLine(list.Last()); //ostani element listy
+Console.WriteLine(list.Count());
