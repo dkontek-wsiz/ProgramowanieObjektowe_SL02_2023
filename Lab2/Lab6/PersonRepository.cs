@@ -40,12 +40,12 @@ namespace Lab2.Lab6
                 if (person == null)
                     return;
 
-                person.BorrowedBooks.Add(book);
+                //person.BorrowedBooks.Add(book);
             }
 
             public List<Book> GetBorrowedBook(long id)
             {
-                return Get(id).BorrowedBooks;
+            return null;// Get(id).BorrowedBooks;
             }
     }
 }

@@ -9,5 +9,7 @@ namespace Lab2.Lab6
         public string Title { get; set; }
         public string Author { get; set; }
         public DateTime PublishDate { get; set; }
+
+        public List<BorrowedBook> BorrowedBooks { get; set; } = new List<BorrowedBook>();
     }    
 }

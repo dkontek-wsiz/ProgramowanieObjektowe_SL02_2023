@@ -10,7 +10,7 @@ namespace Lab2.Lab6
         public string LastName { get; set; }
         public int Age { get; set; }
 
-        public List<Book> BorrowedBooks { get; set; } = new List<Book>();
+        public List<BorrowedBook> BorrowedBooks { get; set; } = new List<BorrowedBook>();
 
         public Person()
         {
