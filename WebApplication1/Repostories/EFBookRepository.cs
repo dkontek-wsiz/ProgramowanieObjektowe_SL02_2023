@@ -14,7 +14,8 @@ namespace WebApplication1.Repostories
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            context.Books.Remove(context.Books.Find(id));
+            context.SaveChanges();
         }
 
         public Book Get(int id)
@@ -29,7 +30,7 @@ namespace WebApplication1.Repostories
 
         public List<Book> GetBooksByAuthor(string author)
         {
-            throw new NotImplementedException();
+            return context.Books.Where(x => x.Author == author).ToList();
         }
 
         public List<Book> GetBooksByPublishYear(int year)
