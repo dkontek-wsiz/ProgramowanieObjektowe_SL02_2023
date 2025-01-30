@@ -16,7 +16,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IPersonRepository, FilePersonRepository>();
-builder.Services.AddScoped<IBookRepository, ADONETBookRepository>();
+builder.Services.AddScoped<IBookRepository, EFBookRepository>();
 
 builder.Services.AddDbContext<LibraryContext>(options =>
 options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
