@@ -20,17 +20,6 @@ namespace WebApplication1.Repostories
             command.Parameters.AddWithValue("@PublishDate", entity.PublishDate);
             command.ExecuteNonQuery();
         }
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Book Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Book> GetAll()
         {
             var books = new List<Book>();
@@ -53,6 +42,42 @@ namespace WebApplication1.Repostories
             return books;
         }
 
+        public Book Get(int id)
+        {
+            using var connection = new SQLiteConnection(connectionString);
+            connection.Open();
+            string query = "SELECT * FROM Books WHERE Id = @Id";
+            using var command = new SQLiteCommand(query, connection);
+            command.Parameters.AddWithValue("@Id", id);
+            using var reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                return new Book
+                {
+                    Id = Convert.ToInt32(reader["Id"]),
+                    CreationTime = Convert.ToDateTime(reader["CreationTime"]),
+                    Title = reader["Title"].ToString(),
+                    Author = reader["Author"].ToString(),
+                    PublishDate = Convert.ToDateTime(reader["PublishDate"])
+                };
+            }
+            return null;
+        }
+
+
+        public void Delete(int id)
+        {
+            using var connection = new SQLiteConnection(connectionString);
+            connection.Open();
+            string query = "DELETE FROM Books WHERE Id = @Id";
+            using var command = new SQLiteCommand(query, connection);
+            command.Parameters.AddWithValue("@Id", id);
+            command.ExecuteNonQuery();
+        }
+
+       
+
+   
         public List<Book> GetBooksByAuthor(string author)
         {
             throw new NotImplementedException();
